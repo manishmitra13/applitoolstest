@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/manishmitra13/applitoolstest#readme",
   "devDependencies": {
+    "@applitools/eyes-cypress": "^3.13.4",
     "cypress": "^5.1.0"
   },
   "dependencies": {

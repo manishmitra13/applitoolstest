@@ -13,6 +13,8 @@ containers:
 
   cypress:
     image: cypress/included:3.4.1
+    environment:
+      APPLITOOLS_API_KEY: 5CrrnlgsziPZqV8PRuaNEZTCyIGd2MIFVv24Thgreec110
     volumes:
       - local: .
         container: /app
@@ -26,9 +28,14 @@ tasks:
       container: app
       command: npm install
 
-
-  cy:run:
+  cy:test:
     description: Run the Cypress tests.
     run:
       container: cypress
       command: cypress run
+  
+  shell:
+    description: Run the Cypress tests.
+    run:
+      container: cypress
+      command: /bin/bash
