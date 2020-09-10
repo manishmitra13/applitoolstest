@@ -4,7 +4,7 @@
   "description": "This is sample project for applitools Test",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
+    "cy:test": "cypress run",
     "cy:open": "cypress open"
   },
   "repository": {

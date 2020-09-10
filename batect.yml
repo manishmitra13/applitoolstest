@@ -27,7 +27,7 @@ tasks:
       command: npm install
 
 
-  e2e:
+  cy:run:
     description: Run the Cypress tests.
     run:
       container: cypress

@@ -2,5 +2,15 @@
     "Fruit": ":nth-child(2) > .categoriesNavigation-link",
     "Grapes":".ng-tns-c37-8.ng-tns-c36-0.ng-star-inserted",
     "allGrapesItems":".shelfProductTile-descriptionLink",
-    "addtoCartGrapes":"#search-content > div > shared-grid > div > div:nth-child(1) > shared-product-tile > section > footer > div > shared-cart-controls > shared-cart-buttons > div > div > button > span"
+    "addtoCartGrapes":"#search-content > div > shared-grid > div > div:nth-child(1) > shared-product-tile > section > footer > div > shared-cart-controls > shared-cart-buttons > div > div > button > span",
+    "firstName":"#signupForm-FirstName",
+    "lastName":"#signupForm-LastName",
+    "emailName":"#signupForm-EmailAddress",
+    "password":"#signupForm-Password",
+    "dateofBirth":"#signupForm-DateOfBirth",
+    "mobilePhone":"#signupForm-MobilePhone",
+    "prefferedContactNumber":"#signupForm-MobilePhone",
+    "clickNo":"label[for$='signupForm-promoCatalogue-no']",
+    "YesConditions":".signupForm-labelTsAndCs",
+    "SignUp":"#signupForm-SignupButton"
 }
