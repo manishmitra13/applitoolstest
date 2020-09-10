@@ -1,0 +1,13 @@
+{
+    "videoCompression": false,
+    "baseUrl":"https://www.woolworths.com.au/",
+    "watchForFileChanges": false,
+    "waitForAnimations": true,
+    "defaultCommandTimeout": 5000,
+    "execTimeout": 60000,
+    "pageLoadTimeout": 60000,
+    "requestTimeout":15000,
+    "responseTimeout":150000,
+    "viewportWidth":2000,
+    "viewportHeight":800
+}

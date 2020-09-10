@@ -1,0 +1,26 @@
+{
+  "name": "applitoolstest",
+  "version": "1.0.0",
+  "description": "This is sample project for applitools Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manishmitra13/applitoolstest.git"
+  },
+  "author": "Manish Mitra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manishmitra13/applitoolstest/issues"
+  },
+  "homepage": "https://github.com/manishmitra13/applitoolstest#readme",
+  "devDependencies": {
+    "cypress": "^5.1.0"
+  },
+  "dependencies": {
+    "cypress-xpath": "^1.6.0"
+  }
+}

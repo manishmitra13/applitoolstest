@@ -1,0 +1,6 @@
+{
+    "Fruit": ":nth-child(2) > .categoriesNavigation-link",
+    "Grapes":".ng-tns-c37-8.ng-tns-c36-0.ng-star-inserted",
+    "allGrapesItems":".shelfProductTile-descriptionLink",
+    "addtoCartGrapes":"#search-content > div > shared-grid > div > div:nth-child(1) > shared-product-tile > section > footer > div > shared-cart-controls > shared-cart-buttons > div > div > button > span"
+}
