@@ -31,8 +31,7 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.get(selectors.clickNo).click();
     cy.get(selectors.YesConditions).click();
     cy.eyesCheckWindow({
-      tag: "Form Before Signup",
-      target: 'window',
+      tag: "Form Before Signup_New",
       fully: true
     });
     cy.get(selectors.SignUp).click();
