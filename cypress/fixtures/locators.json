@@ -12,5 +12,16 @@
     "prefferedContactNumber":"#signupForm-MobilePhone",
     "clickNo":"label[for$='signupForm-promoCatalogue-no']",
     "YesConditions":".signupForm-labelTsAndCs",
-    "SignUp":"#signupForm-SignupButton"
+    "SignUp":"#signupForm-SignupButton",
+    "leftnavAll":".categoriesNavigation-linkText[class$='categoriesNavigation-linkText']",
+    "leftNavMeat":".categoriesNavigation-link[href$='/shop/browse/meat-seafood-deli/meat']",
+    "allmeatItems":".categoriesNavigation-linkText",
+    "clickchicken":".shelfProductTile-descriptionLink[href$='/shop/productdetails/184653/macro-whole-chicken-free-range']",
+    "addtoCartSingle":".cartControls-addCart",
+    "clickMounttainRyeBread":".shelfProductTile-descriptionLink[href$='/shop/productdetails/16436/mountain-bread-rye-mountain-bread']",
+    "viewCart":".button.button--primary.headerCheckout-checkout[class$='button button--primary headerCheckout-checkout']",
+    "cartoffscreen":".cartOffscreen-openButton",
+    "cartvalue":".cart-checkout-total__currency",
+    "checkOut":".button.button--primary[href^='/shop/checkout']",
+    "LoginMessage":".hidden-xs.loginForm-label"
 }

@@ -10,6 +10,16 @@ describe('Navigation to the product to product and trying to checkout a product'
   })
 
   it('Filling up the SignUp application anc checking for the error', () => {
+    cy.eyesOpen({
+      appName: 'Login of Woolworth',
+      testName: 'Signup Page',
+    })
+    cy.eyesCheckWindow({
+      tag: "Login Window",
+      target: 'window',
+      fully: true
+    });
+
     cy.contains('Log in / Signup').click();
     cy.contains('New to Woolworths online').click();
     cy.get(selectors.firstName).type("ManishAppliTest");
@@ -20,8 +30,15 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.get(selectors.prefferedContactNumber).type("0451878192");
     cy.get(selectors.clickNo).click();
     cy.get(selectors.YesConditions).click();
+    cy.eyesCheckWindow({
+      tag: "Form Before Signup",
+      target: 'window',
+      fully: true
+    });
     cy.get(selectors.SignUp).click();
     cy.get('.formValidationSummary-text').contains("The sign up was not successful.");
+
+    cy.eyesClose()
   })
 
 });
