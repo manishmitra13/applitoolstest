@@ -85,4 +85,18 @@ describe('Navigation to the product to product and trying to checkout a product'
     });
   });
 
+  it('Add all the items for a Recipes',() =>{
+    cy.visit('/');
+    cy.clickLink(selectors.mainTab,'Recipes');
+    cy.clickCuisine(selectors.navigationSubLink,'Cuisine');
+    cy.clickCuisine(selectors.navigationSubLink,'Australian');
+    cy.clickLink(`.recipeTile-headerAnchor`,'Easter Egg Pancakes');
+    cy.wait(5000);
+    cy.clickButton(`.button.button--primary`,'Add all');
+    cy.wait(5000);
+    cy.get(selectors.viewCart).click();
+    cy.get(selectors.cartvalue).invoke('text').then((text)=>{
+      expect(text.trim()).to.equal('$11.85');
+    });
+  })
 });

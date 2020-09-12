@@ -27,5 +27,8 @@
     "Header":".categoryHeader-navigationLink",
     "leftNav":".categoriesNavigation-linkText",
     "linkintile":".shelfProductTile-descriptionLink",
-    "closeCartButton":".button.button--primary.headerCheckout-checkout"
+    "closeCartButton":".button.button--primary.headerCheckout-checkout",
+    "mainTab":".coreHeaderNav-link",
+    "leftLink":".linkButton.navigation-item-header",
+    "navigationSubLink":".navigation-item-link"
 }

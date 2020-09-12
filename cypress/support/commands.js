@@ -34,7 +34,28 @@ Cypress.Commands.add('searchItem', (actualText) => {
     cy.clickLinkInsideTile(`.shelfProductTile-descriptionLink`, actualText);
     cy.get('.cartControls-addCart').click({ force: true });
     cy.get('.cartOffscreen-openButton').click({ force: true });
+});
+
+Cypress.Commands.add('clickCuisine', (inboundCss, actualText) => {
+    cy.wait(5000);
+    cy.waitUntil(() => cy.get('.navigation-item-link').should('be.visible'));
+    cy.get(`${inboundCss}`, { timeout: 10000 }).each(($el) => {
+        cy.get($el).invoke('text').then((text) => {
+            if (text.trim() === actualText) {
+                cy.get($el).click({ force: true });
+            }
+        });
+    })
 })
 
+Cypress.Commands.add('clickButton', (inboundCss, actualText) => {
+    cy.get(`${inboundCss}`).each(($el) => {
+        cy.get($el).invoke('text').then((text) => {
+            if (text.trim().indexOf(actualText) !== -1 ) {
+                cy.get($el).click({ force: true });
+            }
+        });
+    })
+})
 
 
