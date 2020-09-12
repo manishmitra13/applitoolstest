@@ -48,7 +48,7 @@ describe('Navigation to the product to product and trying to checkout a product'
     });
   });
 
-  it('adding items form each category and check the total - Long Way', () => {
+  it('adding items form each category and check the total - Long Way', () => {  
     //Created a custom command click Link.
     cy.clickLink(selectors.Header,'Meat, Seafood & Deli');
     cy.clickLink(selectors.leftNav,'Seafood');
