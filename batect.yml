@@ -32,7 +32,7 @@ tasks:
     description: Run the Cypress tests.
     run:
       container: cypress
-      command: cypress run --headed
+      command: cypress run --browser chrome
   
   shell:
     description: Run the Cypress tests.
