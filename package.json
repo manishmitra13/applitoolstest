@@ -4,7 +4,7 @@
   "description": "This is sample project for applitools Test",
   "main": "index.js",
   "scripts": {
-    "cy:test": "cypress run",
+    "cy:test": "cypress run --headed",
     "cy:open": "cypress open"
   },
   "repository": {
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/manishmitra13/applitoolstest#readme",
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.13.4",
-    "cypress": "^5.1.0"
+    "cypress": "^5.1.0",
+    "cypress-wait-until": "^1.7.1"
   },
   "dependencies": {
     "cypress-xpath": "^1.6.0"

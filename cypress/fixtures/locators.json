@@ -23,5 +23,9 @@
     "cartoffscreen":".cartOffscreen-openButton",
     "cartvalue":".cart-checkout-total__currency",
     "checkOut":".button.button--primary[href^='/shop/checkout']",
-    "LoginMessage":".hidden-xs.loginForm-label"
+    "LoginMessage":".hidden-xs.loginForm-label",
+    "Header":".categoryHeader-navigationLink",
+    "leftNav":".categoriesNavigation-linkText",
+    "linkintile":".shelfProductTile-descriptionLink",
+    "closeCartButton":".button.button--primary.headerCheckout-checkout"
 }
