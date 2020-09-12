@@ -3,14 +3,11 @@
 describe('Navigation to the product to product and trying to checkout a product', async () => {
   let selectors;
   before(()=>{
-    cy.fixture('locators.json').then(s => selectors = s)
-  });
-  
-  beforeEach(() => {
     cy.clearCookies({ log: true });
     cy.clearLocalStorage('cleared memory', { log: true })
+    cy.fixture('locators.json').then(s => selectors = s)
     cy.visit('/');
-  })
+  });
 
   afterEach(()=>{
     cy.clearCookies({ log: true });
@@ -18,9 +15,9 @@ describe('Navigation to the product to product and trying to checkout a product'
   })
 
   it('Perform a shop online - Checking if grapes exist in grapes', () => {
-    cy.contains('Fruit & Veg').click();
-    cy.get(selectors.Fruit).click();
-    cy.contains('Grapes').click();
+    cy.clickLink(selectors.Header,'Fruit & Veg')
+    cy.clickLink(selectors.leftNav,'Fruit');
+    cy.clickLink(selectors.leftNav,'Grapes');
     //Validation only Grapes to be shown
     cy.get(selectors.allGrapesItems).each(($el) => {
       cy.get($el).then(() => {
@@ -40,8 +37,25 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.get('.categoryHeader-navigationLink').click({ multiple: true, force: true });
   })
 
+  it('Searching and Adding the Items to Cart - ShortCutWay', () => {
+    cy.searchItem('Pauls Vanilla Custard 6 pack');
+    cy.searchItem('Ocean Blue Surimi Sea Sticks 150g');
+    cy.searchItem('Woolworths Bread Rolls Soft Hamburger 6 pack');
+    cy.searchItem('Woolworths Bread White Extra Soft Loaf 680g');
+    cy.get(selectors.viewCart).click();
+    cy.get(selectors.cartvalue).invoke('text').then((text)=>{
+      expect(text.trim()).to.equal('$15.50');
+    });
+  });
+
   it('adding items form each category and check the total - Long Way', () => {
     //Created a custom command click Link.
+    cy.clickLink(selectors.Header,'Meat, Seafood & Deli');
+    cy.clickLink(selectors.leftNav,'Seafood');
+    cy.clickLink(selectors.leftNav,'Show All Seafood');
+    cy.clickLinkInsideTile(selectors.linkintile,'Ocean Blue Surimi Sea Sticks 150g');
+    cy.get(selectors.addtoCartSingle).click({force : true});
+    cy.get(selectors.closeCartButton).click({force : true});
 
     cy.clickLink(selectors.Header,'Dairy, Eggs & Fridge');
     cy.clickLink(selectors.leftNav,'Cream, Custard & Desserts');
@@ -64,24 +78,6 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.get(selectors.addtoCartSingle).click({force : true});
     cy.get(selectors.closeCartButton).click({force : true});
 
-    cy.clickLink(selectors.Header,'Meat, Seafood & Deli');
-    cy.clickLink(selectors.leftNav,'Seafood');
-    cy.clickLink(selectors.leftNav,'Show All Seafood');
-    cy.clickLinkInsideTile(selectors.linkintile,'Ocean Blue Surimi Sea Sticks 150g');
-    cy.get(selectors.addtoCartSingle).click({force : true});
-    cy.get(selectors.closeCartButton).click({force : true});
- 
-    cy.get(selectors.viewCart).click();
-    cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$15.50');
-    });
-  });
-
-  it('Searching and Adding the Items to Cart - ShortCutWay', () => {
-    cy.searchItem('Pauls Vanilla Custard 6 pack');
-    cy.searchItem('Ocean Blue Surimi Sea Sticks 150g');
-    cy.searchItem('Woolworths Bread Rolls Soft Hamburger 6 pack');
-    cy.searchItem('Woolworths Bread White Extra Soft Loaf 680g');
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
       expect(text.trim()).to.equal('$15.50');
