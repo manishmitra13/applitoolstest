@@ -38,13 +38,13 @@ describe('Navigation to the product to product and trying to checkout a product'
   })
 
   it('Searching and Adding the Items to Cart - ShortCutWay', () => {
-    cy.searchItem('Pauls Vanilla Custard 6 pack');
+    cy.searchItem('Pauls Vanilla Custard 1kg');
     cy.searchItem('Ocean Blue Surimi Sea Sticks 150g');
     cy.searchItem('Woolworths Bread Rolls Soft Hamburger 6 pack');
     cy.searchItem('Woolworths Bread White Extra Soft Loaf 680g');
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$15.50');
+      expect(text.trim()).to.equal('$13.00');
     });
   });
 
@@ -61,7 +61,7 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.clickLink(selectors.Header,'Dairy, Eggs & Fridge');
     cy.clickLink(selectors.leftNav,'Cream, Custard & Desserts');
     cy.clickLink(selectors.leftNav,'Show All Cream, Custard & Desserts');
-    cy.clickLinkInsideTile(selectors.linkintile,'Pauls Vanilla Custard 6 pack');
+    cy.clickLinkInsideTile(selectors.linkintile,'Pauls Vanilla Custard 1kg');
     cy.get(selectors.addtoCartSingle).click({force : true});
     cy.get(selectors.closeCartButton).click({force : true});
     
@@ -81,7 +81,7 @@ describe('Navigation to the product to product and trying to checkout a product'
 
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$15.50');
+      expect(text.trim()).to.equal('$13.00');
     });
   });
 
