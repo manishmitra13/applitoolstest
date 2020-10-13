@@ -44,7 +44,7 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.searchItem('Woolworths Bread White Extra Soft Loaf 680g');
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$13.00');
+      expect(text.trim()).to.equal('$12.20');
     });
   });
 
@@ -81,7 +81,7 @@ describe('Navigation to the product to product and trying to checkout a product'
 
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$13.00');
+      expect(text.trim()).to.equal('$12.20');
     });
   });
 
@@ -92,11 +92,12 @@ describe('Navigation to the product to product and trying to checkout a product'
     cy.clickCuisine(selectors.navigationSubLink,'Australian');
     cy.clickLink(`.recipeTile-headerAnchor`,'Easter Egg Pancakes');
     cy.wait(5000);
+    cy.wait(5000);
     cy.clickButton(`.button.button--primary`,'Add all');
     cy.wait(5000);
     cy.get(selectors.viewCart).click();
     cy.get(selectors.cartvalue).invoke('text').then((text)=>{
-      expect(text.trim()).to.equal('$11.85');
+      expect(text.trim()).to.equal('$12.80');
     });
   })
 });
